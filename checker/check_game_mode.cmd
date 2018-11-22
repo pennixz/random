@@ -6,12 +6,12 @@ set EXE=GameBarPresenceWriter.exe
 :start
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FOUND
 echo Not running
-nircmd.exe setdefaultsounddevice %device_one%
+nircmd.exe setdefaultsounddevice %device_two%
 
 goto FIN
 :FOUND
 echo Running
-nircmd.exe setdefaultsounddevice %device_two%
+nircmd.exe setdefaultsounddevice %device_one%
 
 :FIN
 ENDLOCAL
